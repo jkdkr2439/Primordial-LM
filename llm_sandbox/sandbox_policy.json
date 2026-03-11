@@ -1,0 +1,33 @@
+{
+  "allowed_roots": [
+    "llm_sandbox\\workspace",
+    "llm_sandbox\\memory",
+    "llm_sandbox\\logs",
+    "llm_sandbox\\runtime"
+  ],
+  "blocked_commands": [
+    "Remove-Item",
+    "del",
+    "erase",
+    "rd",
+    "rmdir",
+    "format",
+    "diskpart",
+    "shutdown",
+    "Stop-Computer",
+    "Restart-Computer",
+    "taskkill"
+  ],
+  "blocked_tokens": [
+    ">",
+    ">>",
+    "|",
+    "&&",
+    "||",
+    ";"
+  ],
+  "log_directory": "llm_sandbox\\logs",
+  "workspace_directory": "llm_sandbox\\workspace",
+  "memory_directory": "llm_sandbox\\memory",
+  "runtime_directory": "llm_sandbox\\runtime"
+}
