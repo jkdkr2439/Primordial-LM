@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLM | Primordial Language Machine</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Syntax Highlighting & Markdown -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>PLM</h1>
+                <span>Evolution v2.0</span>
+            </div>
+            <div class="sidebar-content">
+                <button class="btn-new-chat">+ New Evolution</button>
+                <div class="history-list" id="history-list">
+                    <!-- History items -->
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div id="ouroboros-panel" style="display:none; margin-bottom: 12px; border: 1px solid var(--accent); border-radius: 6px; padding: 10px; font-size: 0.75rem;">
+                    <div style="color: var(--accent); font-weight: bold; margin-bottom: 6px;">🐍 OUROBOROS LOOP</div>
+                    <div style="color: var(--text-dim);">
+                        Status: <span id="ouro-status" style="color: #0f0;">Active</span>
+                    </div>
+                    <div style="color: var(--text-dim);">
+                        Cycles: <span id="ouro-cycles" style="color: var(--accent);">0</span>
+                    </div>
+                    <div style="color: var(--text-dim);">
+                        Learnings: <span id="ouro-learnings" style="color: var(--accent);">0</span>
+                    </div>
+                    <button id="btn-ouro-toggle" style="width:100%; margin-top:8px; padding: 6px; background: transparent; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); cursor: pointer; font-size: 0.75rem;">⏸ Pause</button>
+                </div>
+                <div id="stats" class="stats-mini">
+                    <div class="stat"><span>SDCV:</span> <span id="stat-time">0</span></div>
+                    <div class="stat"><span>Organs:</span> <span id="stat-organs">0</span></div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-main">
+            <header class="top-bar">
+                <div class="model-info">
+                    <span id="active-model">Stable Connection</span>
+                </div>
+                <div class="top-actions">
+                    <button id="btn-reset">Reset Nucleus</button>
+                </div>
+            </header>
+
+            <div id="chat-stream" class="chat-scrollarea">
+                <!-- Messages -->
+            </div>
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Initiate thought transfer..." rows="1" disabled></textarea>
+                    <button id="btn-send" class="btn-send" disabled>
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"></path></svg>
+                    </button>
+                </div>
+                <p class="disclaimer">PLM may hallucinate during high-energy state changes.</p>
+            </div>
+
+            <div id="telemetry-panel" class="telemetry-panel">
+                <div class="telemetry-header">
+                    <span>Cognitive Telemetry Stream</span>
+                    <span id="telemetry-status">Connecting...</span>
+                </div>
+                <div id="telemetry-content"></div>
+            </div>
+        </main>
+
+        <!-- Init Overlays -->
+        <div id="setup-panel" class="overlay">
+            <div id="core-status" style="margin-bottom: 20px; font-weight: bold; color: var(--accent); display: none;">
+                [!] INTERNAL CORE DETECTED: THE GREAT MERGER IS COMPLETE
+            </div>
+            <div class="glass-card">
+                <h2>Initialize Substrate</h2>
+                <div class="input-group">
+                    <input type="text" id="weights-dir" placeholder="D:\models\Qwen2.5-7B-Instruct">
+                </div>
+                <div class="checkbox-group" style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-dim);">
+                    <label style="cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <input type="checkbox" id="load-4bit" style="width: auto;"> Infiltrate with 4-bit Quantization (Recommended for low VRAM)
+                    </label>
+                </div>
+                <button id="btn-init">Infiltrate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.5/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

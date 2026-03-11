@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# === SUBSTRATE (15GB model weights — NOT included in code repo) ===
+primordial_llm/substrate/
+# Upload weights separately to HuggingFace model repo
+
+# PLM generated runtime logs (moved to archive)
+llm_sandbox/runtime/
+llm_sandbox/logs/
+
+# Workspace artifacts (generated at runtime)
+llm_sandbox/workspace/*
+!llm_sandbox/workspace/README.md
+
+# Session reports (timestamped — auto-generated)
+llm_sandbox/memory/reports/*
+!llm_sandbox/memory/reports/replication-blueprints-latest.md
+!llm_sandbox/memory/reports/replacement-tracker-latest.md
+
+# Short-term session memory (ephemeral)
+llm_sandbox/memory/short_term/primor-session-*.md
+!llm_sandbox/memory/short_term/primor-session-seed.md
+
+# Local config (machine-specific paths)
+plm_config.json
+plm_eval_report.json
+
+# Ouroboros evolution log (grows over time, machine-specific)
+primordial_llm/data/evolution_log.json
+
+# Temp / scratch
+tmp/
+*.tmp
+
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
