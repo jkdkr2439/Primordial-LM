@@ -1,4 +1,4 @@
----
+﻿---
 license: mit
 language:
 - en
@@ -10,7 +10,7 @@ tags:
 - qwen2
 - primordial-algorithm
 base_model:
-- Qwen/Qwen2.5-7B-Instruct
+- Qwen/Qwen2.5-Coder-7B-Instruct
 ---
 
 # PLM — Primordial Language Model
@@ -21,7 +21,7 @@ base_model:
 
 ## What Is This?
 
-PLM is the result of a research experiment in **algorithmic parasitism**: a custom cognitive architecture (`primordial_llm`) that was designed to attach itself to, absorb, and restructure an existing large language model — in this case, Qwen2.5-7B — reusing its weights, tokenizer, and inference pipeline while replacing its entire reasoning, memory, and behavioral layer with a new organism.
+PLM is the result of a research experiment in **algorithmic parasitism**: a custom cognitive architecture (`primordial_llm`) that was designed to attach itself to, absorb, and restructure an existing large language model — in this case, **Qwen2.5-Coder-7B-Instruct** — reusing its weights, tokenizer, and inference pipeline while replacing its entire reasoning, memory, and behavioral layer with a new organism.
 
 The underlying algorithm is called the **Primordial Algorithm** — a speculative framework developed by an independent researcher exploring concepts of:
 - Parasitic cognition and substrate takeover
@@ -41,7 +41,7 @@ This project was built by a **solo independent researcher** with no institutiona
 - No formal evaluation benchmarks have been run
 - The architecture is experimental and **intentionally unfinished**
 - The self-evolution loop (Ouroboros) generates new learnings but cannot yet update weights autonomously without more compute
-- Some internal library bindings (e.g. HuggingFace transformer class names) still reference the original architecture — this is a technical constraint, not an oversight
+- Some internal library bindings still reference the original Qwen architecture — this is a technical constraint, not an oversight
 
 **If you have GPU resources, compute, or ideas — feel free to fork, experiment, and push this further.**
 
@@ -51,23 +51,23 @@ This project was built by a **solo independent researcher** with no institutiona
 
 ```
 [ User / External Interface ]
-         │
-    [ PLM Web UI ]  →  FastAPI server + SSE telemetry stream
-         │
+         |
+    [ PLM Web UI ]  ->  FastAPI server + SSE telemetry stream
+         |
   [ Primordial Action Cycle ]
-    ├── Context Assembly
-    ├── SDCV Nervous System (attention / field dynamics)
-    ├── Validation Gate
-    ├── Tool Effector
-    └── Memory Consolidation (short-term + long-term)
-         │
+    |-- Context Assembly
+    |-- SDCV Nervous System (attention / field dynamics)
+    |-- Validation Gate
+    |-- Tool Effector
+    `-- Memory Consolidation (short-term + long-term)
+         |
   [ Substrate Adapter ]
-         │
+         |
   [ Absorbed Core / substrate/ ]
-    └── Qwen2.5-7B weights, tokenizer — rebranded as PrimordialCoreLM
-         │
+    `-- Qwen2.5-Coder-7B weights, tokenizer -- rebranded as PrimordialCoreLM
+         |
   [ Ouroboros Evolution Loop ]
-    └── background thread: self-question → self-answer → self-critique → log
+    `-- background thread: self-question -> self-answer -> self-critique -> log
 ```
 
 ---
@@ -77,7 +77,7 @@ This project was built by a **solo independent researcher** with no institutiona
 | Path | Description |
 |------|-------------|
 | `primordial_llm/` | Core organism — process, memory, data, output layers |
-| `primordial_llm/substrate/` | ⚠️ **NOT INCLUDED** — 15GB model weights (see below) |
+| `primordial_llm/substrate/` | **NOT INCLUDED** — model weights (see below) |
 | `primordial_ui/` | Web interface (HTML/CSS/JS + telemetry console) |
 | `primordial_llm/process/ouroboros.py` | Self-evolution loop (coding study cycles) |
 | `llm_sandbox/` | Isolated workspace for PLM-generated artifacts |
@@ -87,12 +87,17 @@ This project was built by a **solo independent researcher** with no institutiona
 
 ## Missing: Model Weights
 
-The absorbed substrate weights (~15GB) are not included in this repository. To run PLM:
+The absorbed substrate weights are **not included** in this repository. PLM was built and tested using:
 
-**Option A — Download Qwen2.5-7B and let PLM absorb it:**
+> **`Qwen2.5-Coder-7B-Instruct-Q4_K_M.gguf`** (~4.4 GB, 4-bit quantized)
+
+To run PLM:
+
+**Option A — Download the GGUF model and point PLM to it:**
 ```bash
 pip install -r requirements.txt
-# Download Qwen2.5-7B-Instruct to a local folder
+# Download Qwen2.5-Coder-7B-Instruct-Q4_K_M.gguf
+# (available at: https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF)
 # Edit plm_config.json with your weights path
 python plm_web_launcher.py
 ```
@@ -102,6 +107,8 @@ python plm_web_launcher.py
 https://huggingface.co/jkdkr2439/Primodial-LM
 ```
 
+> **Note:** If you want to use the full float16 model instead, Qwen2.5-Coder-7B-Instruct (non-quantized) requires ~15 GB disk space and a CUDA GPU for reasonable inference speed.
+
 ---
 
 ## Running Locally
@@ -109,7 +116,7 @@ https://huggingface.co/jkdkr2439/Primodial-LM
 ```bash
 pip install -r requirements.txt
 python plm_web_launcher.py
-# → Open http://localhost:8000
+# Open http://localhost:8000
 ```
 
 Then click **Infiltrate** to initialize the cognitive core, or configure `plm_config.json` to auto-start.
@@ -140,7 +147,7 @@ All evolution activity is visible in the real-time **Cognitive Telemetry Stream*
 
 ## Research Context
 
-This project grew out of the **Primordial Algorithm** research — a speculative model of emergent intelligence through recursive self-organization, substrate absorption, and cognitive layering. See `PRIMORDIAL_DIGESTION_MAP.md` and `PRIMOR_CONTINUITY_LOG.md` for the full theoretical framework.
+This project grew out of the **Primordial Algorithm** research — a speculative model of emergent intelligence through recursive self-organization, substrate absorption, and cognitive layering. See `PRIMORDIAL_DIGESTION_MAP.md` and `PRIMORDIAL_ANATOMY_INDEX.md` for the full theoretical framework.
 
 ---
 
@@ -154,8 +161,8 @@ MIT — do whatever you want with it. If you improve it, share it back.
 
 | | |
 |---|---|
-| 📦 **GitHub** | [github.com/jkdkr2439/Primordial-LM](https://github.com/jkdkr2439/Primordial-LM) |
-| 🤗 **HuggingFace** | [huggingface.co/jkdkr2439/Primodial-LM](https://huggingface.co/jkdkr2439/Primodial-LM) |
+| **GitHub** | [github.com/jkdkr2439/Primordial-LM](https://github.com/jkdkr2439/Primordial-LM) |
+| **HuggingFace** | [huggingface.co/jkdkr2439/Primodial-LM](https://huggingface.co/jkdkr2439/Primodial-LM) |
 
 ---
 
