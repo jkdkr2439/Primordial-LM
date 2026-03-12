@@ -81,7 +81,8 @@ This project was built by a **solo independent researcher** with no institutiona
 | `primordial_ui/` | Web interface (HTML/CSS/JS + telemetry console) |
 | `primordial_llm/process/ouroboros.py` | Self-evolution loop (coding study cycles) |
 | `llm_sandbox/` | Isolated workspace for PLM-generated artifacts |
-| `plm_web_launcher.py` | Server entry point |
+| `plm_web_launcher.py` | **Web mode** - FastAPI server + auto-opens browser |
+| `plm_launcher.py` | **Terminal mode** - Rich console UI (CLI) |
 
 ---
 
@@ -113,13 +114,19 @@ https://huggingface.co/jkdkr2439/Primodial-LM
 
 ## Running Locally
 
+**Web mode** (browser UI + real-time telemetry):
 ```bash
 pip install -r requirements.txt
 python plm_web_launcher.py
-# Open http://localhost:8000
+# Auto-opens http://localhost:8000
 ```
 
-Then click **Infiltrate** to initialize the cognitive core, or configure `plm_config.json` to auto-start.
+**Terminal mode** (Rich console UI):
+```bash
+python plm_launcher.py
+```
+
+Then click **Infiltrate** (web) or follow the console prompt (terminal) to initialize the cognitive core.
 
 ---
 
@@ -167,3 +174,4 @@ MIT — do whatever you want with it. If you improve it, share it back.
 ---
 
 *Built by an independent researcher. Rough edges are part of the experiment.*
+
