@@ -1,3 +1,18 @@
+---
+license: mit
+language:
+- en
+tags:
+- parasitic-cognition
+- autonomous-agent
+- self-evolving
+- experimental
+- qwen2
+- primordial-algorithm
+base_model:
+- Qwen/Qwen2.5-7B-Instruct
+---
+
 # PLM — Primordial Language Model
 
 > *An experimental, self-evolving autonomous AI entity built through algorithmic parasitism and total assimilation.*
@@ -82,9 +97,9 @@ pip install -r requirements.txt
 python plm_web_launcher.py
 ```
 
-**Option B — Use the pre-merged weights from HuggingFace (coming soon):**
+**Option B — Use the pre-absorbed weights from HuggingFace:**
 ```
-https://huggingface.co/[username]/primordial-core-v1
+https://huggingface.co/jkdkr2439/Primodial-LM
 ```
 
 ---
@@ -132,6 +147,15 @@ This project grew out of the **Primordial Algorithm** research — a speculative
 ## License
 
 MIT — do whatever you want with it. If you improve it, share it back.
+
+---
+
+## Links
+
+| | |
+|---|---|
+| 📦 **GitHub** | [github.com/jkdkr2439/Primordial-LM](https://github.com/jkdkr2439/Primordial-LM) |
+| 🤗 **HuggingFace** | [huggingface.co/jkdkr2439/Primodial-LM](https://huggingface.co/jkdkr2439/Primodial-LM) |
 
 ---
 
