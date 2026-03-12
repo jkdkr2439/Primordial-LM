@@ -9,6 +9,12 @@ __pycache__/
 primordial_llm/substrate/
 # Upload weights separately to HuggingFace model repo
 
+# === MODEL WEIGHTS (too large for GitHub — upload to HuggingFace) ===
+primordial_llm/data/weights/
+*.pt
+*.bin
+*.safetensors
+
 # PLM generated runtime logs (moved to archive)
 llm_sandbox/runtime/
 llm_sandbox/logs/
